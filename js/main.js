@@ -32,7 +32,7 @@ function agregarCompra(nombreIngresado, listaNombres, listaPrecios) {
         if (nombreOriginal.toLowerCase() === nombreUsuario) {
             carritoNombres.push(nombreOriginal)
             carritoPrecios.push(listaPrecios[contador])
-            alert("¡Agregaste " + nombreOriginal + " al carrito!")
+            alert("Agregaste " + nombreOriginal + " al carrito")
             console.log("Agregado:", nombreOriginal)
             
             encontrado = true 
@@ -71,8 +71,8 @@ while (seguirComprando) {
         case 1:
             let textoMenu = generarMenu(productosNombres, productosPrecios)
             
-            // Pedimos el nombre (sin parseInt)
-            let nombreProducto = prompt(textoMenu + "\nEscribe el NOMBRE del producto:")
+            
+            let nombreProducto = prompt(textoMenu + "\n Escriba el NOMBRE del producto:")
 
             if (nombreProducto) {
                 agregarCompra(nombreProducto, productosNombres, productosPrecios)
@@ -86,17 +86,17 @@ while (seguirComprando) {
             if (carritoPrecios[0] !== undefined) {
                 alert("Total a pagar: $" + total)
             } else {
-                alert("Tu carrito está vacío.")
+                alert("El carrito está vacío.")
             }
             break;
 
         case 3:
-            alert("Gracias, vuelva pronto.")
+            alert("Muchas gracias, vuelva pronto.")
             seguirComprando = false
             break
 
         default:
-            alert("Opción inválida.")
+            alert("Opción incorrecta.")
            
     }
 }
