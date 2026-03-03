@@ -123,7 +123,7 @@ btnVaciar.onclick = () => {
     carrito = []
     localStorage.removeItem('carritoDetercop')
     actualizarCarritoDOM()
-};
+}
 
 btnFinalizar.onclick = () => {
     if (carrito.length > 0) {
