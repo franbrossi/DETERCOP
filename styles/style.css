@@ -7,22 +7,12 @@ html, body {
 
 .nav-mio {
    
-    background-color: #add8e6; 
+    background-color: #dc6bd5; 
     
     
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-
-.nav-img {
-    height: 50px; 
-    width: auto; 
-    
-    
-    display: block;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
 
 .carousel-item {
     height: 400px;
@@ -42,22 +32,38 @@ html, body {
 body {
     font-family: sans-serif;
     margin: 0;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 header {
+    width: 100%; 
     margin-bottom: 20px;
     text-align: center;
 }
 
 main {
+    padding: 20px; 
     display: flex;
     gap: 20px;
     width: 100%;
     max-width: 1200px;
+}
+
+.footer-p {
+    font-size: 12px;
+    font-style: italic;
+    font-family: "Nunito", sans-serif;
+    margin-left: auto;
+    margin-top: 20px;
+    color: #dc6bd5;
+   
+}
+
+.redes{
+    text-decoration: none;
+    list-style-type: none;
 }
 
 #tienda {
@@ -159,3 +165,5 @@ button {
 .oculto {
     display: none;
 }
+
+

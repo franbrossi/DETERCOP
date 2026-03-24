@@ -14,48 +14,39 @@
         <nav class="navbar navbar-expand-lg nav-mio">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/logo detercop.png" alt="Logo Detercop" class="nav-img">
+                    <img src="./assets/logo detercop.png" alt="Logo Detercop" width="150">
                 </a>
-            </div>
-        </nav>
+        
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDetercop" aria-controls="menuDetercop" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+        <div class="collapse navbar-collapse" id="menuDetercop">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tienda">Nuestros Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#carrito">Ir al Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
         
         <h1>Tienda DETERCOP</h1>
         <div id="mensaje-notificacion" class="oculto"></div>
     </header>
 
     <main>
-        <section id="tienda">
-            
-            <div id="carruselDetercop" class="carousel slide mb-4" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./assets/escobas_proyecto.png" class="d-block w-100 img-carrusel" alt="Escobas Detercop">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/guantes_proyecto.png" class="d-block w-100 img-carrusel" alt="Guantes de goma">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/microfibras_proyecto.png" class="d-block w-100 img-carrusel" alt="Paños de microfibra">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/regaderas_proyecto.png" class="d-block w-100 img-carrusel" alt="Regaderas">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./assets/rejillas_proyecto.png" class="d-block w-100 img-carrusel" alt="Rejillas y esponjas">
-                    </div>
+       <section id="tienda">
+            <h2 class="mb-4 text-center">Nuestros Productos</h2>
+    
+            <div class="row g-4" id="contenedor-productos">
                 </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#carruselDetercop" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carruselDetercop" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
-            <h2>Nuestros Productos</h2>
-            <div id="contenedor-productos"></div>
         </section>
 
         <aside id="carrito">
@@ -72,5 +63,21 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer>
+        <footer>
+        <img src="./assets/logo detercop.png" alt="logo detercop">
+            <section class="redes">
+                <a href="#">INSTAGRAM</a>
+
+                <a href="#">TIKTOK</a>
+
+                
+
+            </section>
+        <p class="footer-p">© 2025 detercop. Prohibida su reproducción total o parcial sin autorización expresa. Todas las marcas comerciales, logotipos e imágenes son propiedad de detercop o de sus respectivos dueños.</p>
+        
+    </footer>
+    </footer>
 </body>
 </html>

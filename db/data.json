@@ -1,0 +1,13 @@
+ [
+    { "id": 1, "nombre": "Escobas", "precio": 7000, "imagen":"./assets/escobas_proyecto.png" },
+
+    { "id": 2, "nombre": "Guantes", "precio": 5300,"imagen":"./assets/guantes_proyecto.png" },
+
+    { "id": 3, "nombre": "Microfibras", "precio": 2800,"imagen":"./assets/microfibras_proyecto.png" },
+
+    { "id": 4, "nombre": "Regadera", "precio": 3700,"imagen":"./assets/regaderas_proyecto.png" },
+
+    { "id": 5, "nombre": "Rejilla", "precio": 6000,"imagen":"./assets/rejillas_proyecto.png" },
+
+    {"id": 6, "nombre": "balde", "precio": 4000,"imagen":"./assets/balde_proyecto.png" }
+]
