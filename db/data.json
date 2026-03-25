@@ -10,4 +10,4 @@
     { "id": 5, "nombre": "Rejilla", "precio": 6000,"imagen":"./assets/rejillas_proyecto.png" },
 
     {"id": 6, "nombre": "balde", "precio": 4000,"imagen":"./assets/balde_proyecto.png" }
-]
+ ]

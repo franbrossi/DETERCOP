@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./styles/style.css">
     <script defer src="./js/main.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    
 </head>
 <body>
     
@@ -14,7 +16,7 @@
         <nav class="navbar navbar-expand-lg nav-mio">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/logo detercop.png" alt="Logo Detercop" width="150">
+                    <img class="logo-nav" src="./assets/logo detercop.png" alt="Logo Detercop" width="150">
                 </a>
         
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDetercop" aria-controls="menuDetercop" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +52,7 @@
         </section>
 
         <aside id="carrito">
+            <form action="./Pages/checkout.html">
             <h2>Tu Carrito</h2>
             <div id="contenedor-carrito">
                 <p>El carrito está vacío.</p>
@@ -58,15 +61,16 @@
                 <p>Total: $0</p>
             </div>
             <button id="btn-vaciar" class="btn-secundario">Vaciar Carrito</button>
-            <button id="btn-finalizar" class="btn-comprar">Finalizar Compra</button>
+            <button id="btn-finalizar" class="btn-comprar" type="submit">Finalizar Compra</button>
+            </form>
         </aside>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
 
     <footer>
-        <footer>
-        <img src="./assets/logo detercop.png" alt="logo detercop">
+        
+        <img class="img-footer" src="./assets/logo detercop.png" alt="logo detercop">
             <section class="redes">
                 <a href="#">INSTAGRAM</a>
 
@@ -78,6 +82,8 @@
         <p class="footer-p">© 2025 detercop. Prohibida su reproducción total o parcial sin autorización expresa. Todas las marcas comerciales, logotipos e imágenes son propiedad de detercop o de sus respectivos dueños.</p>
         
     </footer>
-    </footer>
+    
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </html>

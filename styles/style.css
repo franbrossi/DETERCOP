@@ -7,12 +7,16 @@ html, body {
 
 .nav-mio {
    
-    background-color: #dc6bd5; 
+    background-color: lightgrey; 
     
     
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.logo-nav{
+    width: auto;
+    height: 130px;
+}
 
 .carousel-item {
     height: 400px;
@@ -51,6 +55,10 @@ main {
     max-width: 1200px;
 }
 
+footer{
+    text-align: center;
+}
+
 .footer-p {
     font-size: 12px;
     font-style: italic;
@@ -58,14 +66,20 @@ main {
     margin-left: auto;
     margin-top: 20px;
     color: #dc6bd5;
+    
    
 }
 
-.redes{
-    text-decoration: none;
-    list-style-type: none;
+.redes a{
+    text-decoration: none ;
+    color: black;
+    
 }
 
+.img-footer {
+    width: auto;
+    height: 150px;
+}
 #tienda {
     flex: 3;
 }
