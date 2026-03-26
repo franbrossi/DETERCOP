@@ -13,8 +13,8 @@ const contenedorProductos = document.getElementById('contenedor-productos')
 const contenedorCarrito = document.getElementById('contenedor-carrito')
 const totalCarrito = document.getElementById('carrito-total')
 
-const btnFinalizar = document.getElementsByClassName('btn-comprar')[0]
 const btnVaciar = document.getElementsByClassName('btn-secundario')[0]
+const btnFinalizar = document.getElementById('btn-finalizar')
 
 function obtenerProductos() {
     fetch(URL)
@@ -179,6 +179,25 @@ btnVaciar.addEventListener('click', () => {
     localStorage.removeItem('carritoDetercop')
     actualizarCarritoDOM()
 })
+
+btnFinalizar.addEventListener ('click', () => {
+    
+    if (carrito.length > 0) {
+        window.location.href="pages/checkout.html"
+        
+    } else if (carrito.length < 1 ) {
+
+        Swal.fire({
+                icon: "error",
+                title: "ERROR",
+                text: "El carrito esta vacio por favor ingrese productos para continuar con la compra"
+
+            });
+        
+    }
+})
+
+
 
 
 

@@ -12,6 +12,7 @@ let productosDisponibles = []
 const contenedorProductos = document.getElementById('contenedor-productos')
 const contenedorCarrito = document.getElementById('contenedor-carrito')
 const totalCarrito = document.getElementById('carrito-total')
+const checkoutForm = document.getElementById('checkout-form')
 
 const btnFinalizar = document.getElementById('btnFinalizar')
 
@@ -20,7 +21,7 @@ function obtenerProductos() {
         .then(response => response.json())
         .then(data => {
             productosDisponibles = data
-            
+
         })
         .catch(err => {
             Swal.fire({
@@ -50,7 +51,7 @@ function actualizarCarritoDOM() {
 
 
         item.setAttribute('class', 'cart-item')
-        
+
 
 
 
@@ -58,7 +59,7 @@ function actualizarCarritoDOM() {
         texto.innerText = ` ${producto.cantidad} - ${producto.nombre} - $${producto.precio} - $${producto.subtotal}`
 
 
-      
+
 
 
         item.appendChild(texto)
@@ -94,6 +95,7 @@ function cargarCarritoLocalStorage() {
 
 btnFinalizar.addEventListener('click', () => {
     if (carrito.length > 0) {
+
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: "btn btn-success",
@@ -101,32 +103,64 @@ btnFinalizar.addEventListener('click', () => {
             },
             buttonsStyling: false
         });
-        swalWithBootstrapButtons.fire({
-            title: "Seguro que deseas continuar con la compra?",
-            text: "Tu compra se procesara inmediatamente",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Si, continuar",
-            cancelButtonText: "No, cancelar",
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) swalWithBootstrapButtons.fire({
-                title: "Gracias",
-                text: "Tu compra fue procesada",
-                icon: "success"
+
+        if (checkoutForm.checkValidity()) {
+
+            swalWithBootstrapButtons.fire({
+                title: "Seguro que deseas continuar con la compra?",
+                text: "Tu compra se procesara inmediatamente",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Si, continuar",
+                cancelButtonText: "No, cancelar",
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    GuardarOrden()
+                    window.location.href = "./thank_you.html"
+                    
+                }
+                else if (result.dismiss === Swal.DismissReason.cancel) swalWithBootstrapButtons.fire({
+                    title: "Cancelada",
+                    text: "Tu compra fue cancelada",
+                    icon: "error"
+                });
             });
-            else if (result.dismiss === Swal.DismissReason.cancel) swalWithBootstrapButtons.fire({
-                title: "Cancelada",
-                text: "Tu compra fue cancelada",
-                icon: "error"
-            });
+
+        }
+
+        checkoutForm.classList.add('was-validated')
+
+
+
+
+    } else if (carrito.length == 0) {
+        Swal.fire({
+            icon: "error",
+            title: "ERROR",
+            text: "El carrito esta vacio"
+
         });
+
     }
 })
 
+
+function GuardarOrden() {
+    const formData = new FormData(checkoutForm)
+    const datosOrden = Object.fromEntries(formData.entries())
+    const ordenJson = JSON.stringify(datosOrden)
+    localStorage.setItem('ordenDetercop', ordenJson)
+
+}
 
 
 window.onload = () => {
     obtenerProductos()
     cargarCarritoLocalStorage()
+
+
+
 }
+
+

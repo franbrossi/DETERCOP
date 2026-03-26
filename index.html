@@ -1,58 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DETERCOP - Tienda de Limpieza</title>
     <link rel="stylesheet" href="./styles/style.css">
     <script defer src="./js/main.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-    
+
 </head>
+
 <body>
-    
+
     <header>
+
         <nav class="navbar navbar-expand-lg nav-mio">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img class="logo-nav" src="./assets/logo detercop.png" alt="Logo Detercop" width="150">
-                </a>
-        
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDetercop" aria-controls="menuDetercop" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="col-md-4">
+                    <a class="navbar-brand" href="#">
+                        <img class="logo-nav" src="./assets/logo_detercop.png" alt="Logo Detercop" width="150">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <h1>Tienda de productos de limpieza </h1>
+                </div>
+                <div class="col-md-4">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#menuDetercop" aria-controls="menuDetercop" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
-        <div class="collapse navbar-collapse" id="menuDetercop">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#tienda">Nuestros Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#carrito">Ir al Carrito</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+                    <div class="collapse navbar-collapse" id="menuDetercop">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tienda">Nuestros Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#carrito">Ir al Carrito</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </nav>
+
         
-        <h1>Tienda DETERCOP</h1>
         <div id="mensaje-notificacion" class="oculto"></div>
     </header>
 
     <main>
-       <section id="tienda">
+        <section id="tienda">
             <h2 class="mb-4 text-center">Nuestros Productos</h2>
-    
+
             <div class="row g-4" id="contenedor-productos">
-                </div>
+            </div>
         </section>
 
         <aside id="carrito">
-            <form action="./Pages/checkout.html">
+
             <h2>Tu Carrito</h2>
             <div id="contenedor-carrito">
                 <p>El carrito está vacío.</p>
@@ -61,29 +77,31 @@
                 <p>Total: $0</p>
             </div>
             <button id="btn-vaciar" class="btn-secundario">Vaciar Carrito</button>
-            <button id="btn-finalizar" class="btn-comprar" type="submit">Finalizar Compra</button>
-            </form>
+            <button id="btn-finalizar" class="btn-comprar">Finalizar Compra</button>
+
         </aside>
     </main>
 
-    
+
 
     <footer>
-        
-        <img class="img-footer" src="./assets/logo detercop.png" alt="logo detercop">
-            <section class="redes">
-                <a href="#">INSTAGRAM</a>
 
-                <a href="#">TIKTOK</a>
+        <img class="img-footer" src="./assets/Gemini_Generated_Image_ogp481ogp481ogp4.png" alt="logo detercop">
+        <section class="redes">
+            <a href="#">INSTAGRAM</a>
 
-                
+            <a href="#">TIKTOK</a>
 
-            </section>
-        <p class="footer-p">© 2025 detercop. Prohibida su reproducción total o parcial sin autorización expresa. Todas las marcas comerciales, logotipos e imágenes son propiedad de detercop o de sus respectivos dueños.</p>
-        
+
+
+        </section>
+        <p class="footer-p">© 2025 detercop. Prohibida su reproducción total o parcial sin autorización expresa. Todas
+            las marcas comerciales, logotipos e imágenes son propiedad de detercop o de sus respectivos dueños.</p>
+
     </footer>
-    
+
 </body>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>

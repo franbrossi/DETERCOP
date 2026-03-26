@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETERCOP - Tienda de Limpieza</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script defer src="../js/thank_you.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg nav-mio">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img class="logo-nav" src="../assets/logo_detercop.png" alt="Logo Detercop" width="150">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuDetercop"
+                    aria-controls="menuDetercop" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuDetercop">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Nuestros Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Ir al Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="mt-5">Gracias</h1>
+
+        <h2> Este es el resumen de su compra</h2>
+
+
+    </header>
+
+    <main>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-header">Datos Personales</div>
+                        <div class="card-body text-secondary">
+                            <div id="datosOrden">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-header">Productos</div>
+                        <div class="card-body text-secondary">
+                            <div id="contenedor-carrito">
+
+                            </div>
+                            <h5 class="card-title mt-3">Total</h5>
+                            <div id="carrito-total"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
