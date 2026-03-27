@@ -31,7 +31,7 @@ function obtenerProductos() {
 
             });
         })
-        .finally()  
+        .finally()
 }
 
 // funcion para que se renderizen bien los productos 
@@ -97,9 +97,15 @@ function agregarcantidad(idProducto) {
 
 function restarcantidad(idProducto) {
     const productoEnCarrito = carrito.find((c) => c.id == idProducto)
-    productoEnCarrito.cantidad--
-    productoEnCarrito.subtotal = productoEnCarrito.precio * productoEnCarrito.cantidad
-    actualizarCarritoDOM()
+    if (productoEnCarrito.cantidad > 1) {
+        productoEnCarrito.cantidad--
+        productoEnCarrito.subtotal = productoEnCarrito.precio * productoEnCarrito.cantidad
+        actualizarCarritoDOM()
+
+    } else {
+        eliminarDelCarrito(idProducto)
+    }
+
 }
 
 // funcion para ir actualizando ek carrito a medida que el usuario realice cambios y ademas guardandolo con localstorage
@@ -121,6 +127,7 @@ function actualizarCarritoDOM() {
         const inputRestarCantidad = document.createElement('button')
         inputsumarcantidad.innerText = "+"
         inputRestarCantidad.innerText = "-"
+
 
         inputsumarcantidad.addEventListener('click', () => {
             agregarcantidad(producto.id)
@@ -187,20 +194,20 @@ btnVaciar.addEventListener('click', () => {
     actualizarCarritoDOM()
 })
 
-btnFinalizar.addEventListener ('click', () => {
-    
+btnFinalizar.addEventListener('click', () => {
+
     if (carrito.length > 0) {
-        window.location.href="pages/checkout.html"
-        
-    } else if (carrito.length < 1 ) {
+        window.location.href = "pages/checkout.html"
+
+    } else if (carrito.length < 1) {
 
         Swal.fire({
-                icon: "error",
-                title: "ERROR",
-                text: "El carrito esta vacio por favor ingrese productos para continuar con la compra"
+            icon: "error",
+            title: "ERROR",
+            text: "El carrito esta vacio por favor ingrese productos para continuar con la compra"
 
-            });
-        
+        });
+
     }
 })
 
