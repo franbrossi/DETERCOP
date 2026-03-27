@@ -77,7 +77,6 @@ function guardarCarritoLocalStorage() {
 
 function cargarCarritoLocalStorage() {
     const carritoGuardado = localStorage.getItem('carritoDetercop')
-    console.log(carritoGuardado)
     if (carritoGuardado) {
         carrito = JSON.parse(carritoGuardado)
         actualizarCarritoDOM();
