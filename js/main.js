@@ -1,7 +1,5 @@
 
-// Hola Fran, gracias por enviar tu pre entrega 2 , en general muy buen avance. La entrega cumple con los requisitos de la consigna al integrar JavaScript con HTML mediante manipulación del DOM y uso de eventos. Los productos se renderizan dinámicamente en la página, se capturan eventos en los botones para agregar o eliminar productos del carrito y se actualiza el contenido del carrito directamente en la interfaz. También se utiliza un array para almacenar los productos seleccionados y localStorage para guardar la información y recuperarla al recargar la página. El flujo de entrada, proceso y salida es claro y las funciones están separadas para tareas específicas como renderizar productos, actualizar el carrito y calcular el total. Para alcanzar un nivel óptimo, sería recomendable mejorar algunos detalles de organización del código, por ejemplo manejar todos los eventos con addEventListener en lugar de mezclarlo con onclick, y mantener un criterio más uniforme en la manipulación del DOM. También podría agregarse un manejo de cantidades en el carrito en lugar de repetir productos iguales en el array
 
-// FALTAN AGREGAR LIBRERIAS
 
 const URL = "/db/data.json"
 
@@ -15,6 +13,8 @@ const totalCarrito = document.getElementById('carrito-total')
 
 const btnVaciar = document.getElementsByClassName('btn-secundario')[0]
 const btnFinalizar = document.getElementById('btn-finalizar')
+
+// obtengo los productos desde mi api simulada 
 
 function obtenerProductos() {
     fetch(URL)
@@ -31,9 +31,10 @@ function obtenerProductos() {
 
             });
         })
-        .finally(() => console.log("ha terminado la peticion"))
+        .finally()  
 }
 
+// funcion para que se renderizen bien los productos 
 function renderizarProductos(lista) {
     contenedorProductos.innerHTML = ''
 
@@ -60,7 +61,7 @@ function renderizarProductos(lista) {
     }
 }
 
-
+// agrega al carrito haciendo un push y antes validando que el producto coincida con lo que esta en el array
 function agregarAlCarrito(idProducto) {
     const productoElegido = productosDisponibles.find((p) => p.id == idProducto)
     const productoEnCarrito = carrito.find((c) => c.id == idProducto)
@@ -77,18 +78,22 @@ function agregarAlCarrito(idProducto) {
     }
 }
 
+// funcion para eliminar del carrito 
+
 function eliminarDelCarrito(idProducto) {
     carrito = carrito.filter((p) => p.id !== idProducto)
     actualizarCarritoDOM()
 }
 
-
+// funcion para agregar varios productos del mismo tipo
 function agregarcantidad(idProducto) {
     const productoEnCarrito = carrito.find((c) => c.id == idProducto)
     productoEnCarrito.cantidad++
     productoEnCarrito.subtotal = productoEnCarrito.precio * productoEnCarrito.cantidad
     actualizarCarritoDOM()
 }
+
+// funcion de restar la cantidad de productos de un mismo tipo con un contador
 
 function restarcantidad(idProducto) {
     const productoEnCarrito = carrito.find((c) => c.id == idProducto)
@@ -97,6 +102,7 @@ function restarcantidad(idProducto) {
     actualizarCarritoDOM()
 }
 
+// funcion para ir actualizando ek carrito a medida que el usuario realice cambios y ademas guardandolo con localstorage
 function actualizarCarritoDOM() {
     guardarCarritoLocalStorage()
     contenedorCarrito.innerHTML = ''
@@ -154,16 +160,17 @@ function actualizarCarritoDOM() {
     const totalFinal = calcularTotal()
     totalCarrito.innerHTML = `<p>Total: $${totalFinal}</p>`
 }
-
+// calcular el total de la compra
 function calcularTotal() {
     let totalAcumulado = carrito.reduce((acumulador, producto) => acumulador + producto.subtotal, 0)
     return totalAcumulado
 }
 
+// guardamos el carrito en el localstorage
 function guardarCarritoLocalStorage() {
     localStorage.setItem('carritoDetercop', JSON.stringify(carrito))
 }
-
+// carga el carrito si por accidente se cierra la pag y vuelve a cargar con los datos guardados 
 function cargarCarritoLocalStorage() {
     const carritoGuardado = localStorage.getItem('carritoDetercop')
     if (carritoGuardado) {

@@ -1,8 +1,4 @@
 
-// Hola Fran, gracias por enviar tu pre entrega 2 , en general muy buen avance. La entrega cumple con los requisitos de la consigna al integrar JavaScript con HTML mediante manipulación del DOM y uso de eventos. Los productos se renderizan dinámicamente en la página, se capturan eventos en los botones para agregar o eliminar productos del carrito y se actualiza el contenido del carrito directamente en la interfaz. También se utiliza un array para almacenar los productos seleccionados y localStorage para guardar la información y recuperarla al recargar la página. El flujo de entrada, proceso y salida es claro y las funciones están separadas para tareas específicas como renderizar productos, actualizar el carrito y calcular el total. Para alcanzar un nivel óptimo, sería recomendable mejorar algunos detalles de organización del código, por ejemplo manejar todos los eventos con addEventListener en lugar de mezclarlo con onclick, y mantener un criterio más uniforme en la manipulación del DOM. También podría agregarse un manejo de cantidades en el carrito en lugar de repetir productos iguales en el array
-
-// FALTAN AGREGAR LIBRERIAS
-
 const URL = "../db/data.json"
 
 let carrito = []
@@ -31,7 +27,7 @@ function obtenerProductos() {
 
             });
         })
-        .finally(() => console.log("ha terminado la peticion"))
+        .finally() 
 }
 
 
@@ -145,6 +141,7 @@ btnFinalizar.addEventListener('click', () => {
     }
 })
 
+// almacenamos la orden realizada por el usuario con localstorage
 
 function GuardarOrden() {
     const formData = new FormData(checkoutForm)

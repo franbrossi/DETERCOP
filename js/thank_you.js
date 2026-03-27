@@ -37,6 +37,7 @@ function actualizarCarritoDOM() {
 
 }
 
+// mostramos la orden del que realizo el usuario 
 
 function cargarOrden() {
     const ordenGuardado = localStorage.getItem('ordenDetercop')

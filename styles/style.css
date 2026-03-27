@@ -16,6 +16,7 @@ html, body {
 .logo-nav{
     width: auto;
     height: 80px;
+    
 }
 
 h1 {
@@ -84,7 +85,7 @@ footer{
 
 .img-footer {
     width: auto;
-    height: 150px;
+    height: 80px;
 }
 #tienda {
     flex: 3;
